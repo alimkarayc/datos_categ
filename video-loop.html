@@ -1,0 +1,52 @@
+<script>
+window.addEventListener("load", function () {
+
+  function detenerTodos() {
+    document
+      .querySelectorAll(".video-column video")
+      .forEach(function (video) {
+        video.pause();
+        video.currentTime = 0;
+      });
+  }
+
+  function reproducirEnDiapositiva(slide) {
+    detenerTodos();
+
+    if (!slide) return;
+
+    slide
+      .querySelectorAll(".video-column video")
+      .forEach(function (video) {
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.preload = "auto";
+        video.removeAttribute("controls");
+        video.currentTime = 0;
+
+        const reproduccion = video.play();
+
+        if (reproduccion !== undefined) {
+          reproduccion.catch(function () {
+            /* El navegador puede requerir una interacción inicial */
+          });
+        }
+      });
+  }
+
+  if (window.Reveal) {
+    Reveal.on("ready", function (event) {
+      reproducirEnDiapositiva(event.currentSlide);
+    });
+
+    Reveal.on("slidechanged", function (event) {
+      reproducirEnDiapositiva(event.currentSlide);
+    });
+
+    reproducirEnDiapositiva(Reveal.getCurrentSlide());
+  }
+
+});
+</script>

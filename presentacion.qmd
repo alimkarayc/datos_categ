@@ -1,0 +1,177 @@
+---
+title: "Regresión logística aplicada a la inasistencia médica"
+subtitle: "Electivo: Datos Categóricos"
+date: "2026-01-01"
+date-format: "MM-YYYY"
+author: "Camila Herrera C."
+format:
+  revealjs:
+    theme: simple
+    slide-level: 2
+    navigation-mode: linear
+    loop: false
+    slide-number: true
+    transition: fade
+    css: styles.css
+    include-after-body: video-loop.html
+    embed-resources: false
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## 1. De categorías a decisiones
+
+- Variable binaria: asiste / no asiste.
+- Variable nominal: especialidad médica.
+- Variable ordinal: prioridad baja / media / alta.
+
+$$\widehat{\pi} = \frac{y}{n}$$
+
+::: note
+Los datos categóricos permiten cuantificar respuestas expresadas como categorías.
+:::
+
+## 2. Tabla de contingencia: SMS e inasistencia
+
+| Recordatorio | Inasiste | Asiste | Total |
+|--------------|---------:|-------:|------:|
+| Sin SMS      |      150 |    350 |   500 |
+| Con SMS      |       50 |    450 |   500 |
+
+::: card
+Sin SMS: **30%** de inasistencia\
+Con SMS: **10%** de inasistencia
+:::
+
+$$RR = \frac{0.30}{0.10}=3.0$$
+
+$$OR = \frac{0.30/0.70}{0.10/0.90}=3.86$$
+
+::: note
+La prueba (\chi\^2) evalúa asociación, no causalidad.
+:::
+
+## 3. GLM: el puente hacia probabilidades válidas {.two-column-slide}
+
+:::::::: {.columns .content-video-layout}
+:::::: {.column .text-column width="46%"}
+::: {.card .compact-card markdown="1"}
+**Componente aleatorio**
+
+$$Y_i \mid \mathbf{x}_i
+\sim
+\operatorname{Bernoulli}(\pi_i)$$
+:::
+
+::: {.card .compact-card markdown="1"}
+**Predictor lineal**
+
+$$\eta_i
+=
+\beta_0
++
+\beta_1\,\mathrm{SMS}_i
++
+\beta_2\,\mathrm{Espera}_i
++
+\beta_3\,\mathrm{Antecedente}_i$$
+:::
+
+::: {.card .compact-card markdown="1"}
+**Función de enlace logit**
+
+$$\operatorname{logit}(\pi_i)
+=
+\log\left(
+\frac{\pi_i}{1-\pi_i}
+\right)
+=
+\eta_i$$
+:::
+::::::
+
+::: {.column .video-column width="54%"}
+{{< video videos/video_logit.mp4 >}}
+
+[La función logística mantiene las probabilidades dentro del intervalo (\[0,1\]).]{.side-video-caption}
+:::
+::::::::
+
+## 4. Regresión logística: interpretar y predecir {.two-column-slide .model-slide}
+
+:::: {.columns .content-video-layout}
+
+::: {.column .text-column .model-column width="46%"}
+
+<div class="model-box" markdown="1">
+$$
+\begin{aligned}
+\operatorname{logit}(\widehat{\pi})
+&=
+-2.20
+-1.20\,\mathrm{SMS}
++0.06\,\mathrm{Espera} \\
+&\qquad +1.10\,\mathrm{Antecedente}
+\end{aligned}
+$$
+
+| Predictor   |   OR | Interpretación                  |
+|-------------|-----:|---------------------------------|
+| SMS         | 0.30 | Reduce las odds de inasistencia |
+| Espera      | 1.06 | Cada día aumenta 6% las odds    |
+| Antecedente | 3.00 | Triplica las odds               |
+
+<div class="note compact-note" markdown="1">
+
+No interpretar el OR como una variación directa de la probabilidad.
+
+</div>
+
+</div>
+
+:::
+
+::: {.column .video-column width="54%"}
+
+<div class="video-box" markdown="1">
+
+{{< video videos/video_prediccion.mp4 >}}
+
+[El modelo traduce las características del paciente en una probabilidad individual.]{.side-video-caption}
+
+</div>
+
+:::
+
+::::
+
+## 5. Construcción del modelo
+
+1.  Definir respuesta y predictores.
+2.  Ajustar modelo inicial.
+3.  Comparar modelos: AIC, razón de verosimilitud.
+4.  Diagnosticar: devianza, residuos, observaciones influyentes.
+5.  Comunicar: OR, IC95% y probabilidades estimadas.
+
+::: card
+AIC: 842 → 838 → 836\
+Menor AIC = mejor equilibrio entre ajuste y complejidad.
+:::
+
+::: note
+Cuidado con la separación completa: un predictor puede clasificar perfectamente y generar estimaciones infinitas.
+:::
+
+## 6. Cierre
+
+::: big
+Categorizar → comparar → modelar → decidir
+:::
+
+Los datos categóricos permiten pasar de una respuesta simple, como “asistió/no asistió”, a una estimación útil para la toma de decisiones.
+
+::: note
+La regresión logística no solo describe: traduce factores en probabilidades interpretables.
+:::
