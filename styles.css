@@ -431,3 +431,25 @@
 }
 
 
+/* Enlace de descarga en la diapositiva final */
+.reveal .closing-slide .repo-link {
+  margin-top: 1.1em;
+  text-align: center;
+  font-size: 0.58em;
+  color: #475569;
+}
+
+.reveal .closing-slide .repo-link p {
+  margin: 0;
+  font-size: 1em;
+}
+
+.reveal .closing-slide .repo-link a {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.reveal .closing-slide .repo-link a:hover {
+  text-decoration: underline;
+}
