@@ -102,21 +102,18 @@ $$\operatorname{logit}(\pi_i)
 
 ## 4. Regresión logística: interpretar y predecir {.two-column-slide .model-slide}
 
-:::: {.columns .content-video-layout}
+:::::::: {.columns .content-video-layout}
+::::: {.column .text-column .model-column width="46%"}
+:::: {.model-box markdown="1"}
 
-::: {.column .text-column .model-column width="46%"}
-
-<div class="model-box" markdown="1">
-$$
-\begin{aligned}
+$$\begin{aligned}
 \operatorname{logit}(\widehat{\pi})
 &=
 -2.20
 -1.20\,\mathrm{SMS}
 +0.06\,\mathrm{Espera} \\
 &\qquad +1.10\,\mathrm{Antecedente}
-\end{aligned}
-$$
+\end{aligned}$$
 
 | Predictor   |   OR | Interpretación                  |
 |-------------|-----:|---------------------------------|
@@ -124,29 +121,20 @@ $$
 | Espera      | 1.06 | Cada día aumenta 6% las odds    |
 | Antecedente | 3.00 | Triplica las odds               |
 
-<div class="note compact-note" markdown="1">
-
+::: {.note .compact-note markdown="1"}
 No interpretar el OR como una variación directa de la probabilidad.
-
-</div>
-
-</div>
-
 :::
+::::
+:::::
 
-::: {.column .video-column width="54%"}
-
-<div class="video-box" markdown="1">
-
+:::: {.column .video-column width="54%"}
+::: {.video-box markdown="1"}
 {{< video videos/video_prediccion.mp4 >}}
 
 [El modelo traduce las características del paciente en una probabilidad individual.]{.side-video-caption}
-
-</div>
-
 :::
-
 ::::
+::::::::
 
 ## 5. Construcción del modelo
 
@@ -172,6 +160,8 @@ Categorizar → comparar → modelar → decidir
 :::
 
 Los datos categóricos permiten pasar de una respuesta simple, como “asistió/no asistió”, a una estimación útil para la toma de decisiones.
+
+###### **Código y archivos reproducibles:** [Descargar proyecto completo](https://github.com/alimkarayc/datos_categy "Material reproducible")
 
 ::: note
 La regresión logística no solo describe: traduce factores en probabilidades interpretables.
