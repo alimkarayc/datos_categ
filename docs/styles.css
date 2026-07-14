@@ -1,0 +1,433 @@
+.reveal {
+  font-family: "Aptos", "Segoe UI", sans-serif;
+  color: #1f2937;
+  font-size: 24px;
+}
+
+.reveal h1, .reveal h2 {
+  color: #12355B;
+    font-weight: 700;
+}
+
+.reveal h2 {
+  font-size: 1.35em;
+}
+
+.reveal p, .reveal li {
+  font-size: 0.78em;
+}
+
+.reveal .card {
+  background: #eef6ff;
+  border-left: 6px solid #4a90e2;
+  border-radius: 14px;
+  padding: 0.55em 0.75em;
+  margin: 0.35em 0;
+  font-size: 0.9em;
+}
+
+.note {
+  background: #FFF4D6;
+    border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 600;
+}
+
+.small {
+  font-size: 0.65em;
+}
+
+.big {
+  font-size: 1.7em;
+  font-weight: 700;
+  color: #12355B;
+}
+
+
+
+
+
+
+/* =========================================================
+   DIAPOSITIVA GLM
+   ========================================================= */
+
+.reveal .glm-card {
+  background: #eef6ff;
+  border-left: 6px solid #4a90e2;
+  border-radius: 14px;
+  padding: 0.48em 0.72em;
+  margin-bottom: 0.38em;
+  box-sizing: border-box;
+}
+
+/* Título pequeño dentro de cada tarjeta */
+.reveal .glm-card h3 {
+  color: #1f2937;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 0.12em 0;
+  line-height: 1.15;
+}
+
+/* Tamaño de las expresiones matemáticas */
+.reveal .glm-card .formula {
+  font-size: 0.9em;
+  line-height: 1.1;
+}
+
+/* Reduce los márgenes que MathJax agrega */
+.reveal .glm-card .formula p {
+  margin: 0;
+}
+
+.reveal .glm-card mjx-container[display="true"] {
+  margin: 0.08em 0 !important;
+}
+
+/* Contenedor del video */
+.reveal .video-container {
+  width: 100%;
+  margin-top: 0.35em;
+  text-align: center;
+}
+
+/* Tamaño del video */
+.reveal .slide-video {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px #f8fafc;
+  background: #f8fafc;
+}
+
+/* Explicación debajo del video */
+.reveal .video-caption {
+  color: #475569;
+  font-size: 0.42em;
+  line-height: 1.25;
+  margin: 0.45em auto 0 auto;
+  max-width: 95%;
+}
+
+
+
+/* =========================================================
+   DIAPOSITIVAS CON TEXTO A LA IZQUIERDA Y VIDEO A LA DERECHA
+   ========================================================= */
+
+/* Área situada debajo del título */
+.reveal .two-column-slide .content-video-layout {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25em;
+  width: 100%;
+  height: 400px;
+  margin-top: 0.10em;
+}
+
+/* Evita que una columna empuje a la otra */
+.reveal .content-video-layout .column {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Columna de texto */
+.reveal .text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+/* Columna del video */
+.reveal .video-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Contenedor generado por el shortcode de Quarto */
+.reveal .video-column .quarto-video {
+  width: 100%;
+  margin: 0;
+}
+
+/* Video local MP4 */
+.reveal .video-column video {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  max-height: 420px;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  margin: 0 auto;
+  background: #f8fafc;
+  border-radius: 0px;
+  box-shadow: 0 7px 22px #f8fafc;
+}
+
+/* Texto debajo del video */
+.reveal .side-video-caption {
+  display: block;
+  width: 100%;
+  margin: 0.30em auto 0 auto;
+  max-width: 95%;
+  color: #475569;
+  font-size: 0.55em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/* Tarjetas compactas de la diapositiva GLM */
+.reveal .compact-card {
+  padding: 0.30em 0.55em;
+  margin: 0 0 0.28em 0;
+  border-left-width: 5px;
+}
+
+/* Título dentro de cada tarjeta */
+.reveal .compact-card strong {
+  display: block;
+  font-size: 0.72em;
+  margin-bottom: 0.05em;
+}
+
+/* Elimina márgenes innecesarios */
+.reveal .compact-card p {
+  margin: 0;
+}
+
+/* Ecuaciones de las tarjetas */
+.reveal .compact-card mjx-container[display="true"] {
+  font-size: 72% !important;
+  margin: 0.08em 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ecuación principal de regresión logística */
+.reveal .model-column mjx-container[display="true"] {
+  font-size: 72% !important;
+  margin: 0.15em 0 0.30em 0 !important;
+}
+
+/* Tabla compacta */
+.reveal .model-column table {
+  width: 100%;
+  margin: 0.20em 0 0.35em 0;
+  font-size: 0.68em;
+}
+
+/* Menos espacio dentro de las celdas */
+.reveal .model-column table th,
+.reveal .model-column table td {
+  padding: 0.22em 0.32em;
+}
+
+/* Advertencia inferior compacta */
+.reveal .compact-note {
+  padding: 0.42em 0.58em;
+  margin-top: 0.25em;
+  font-size: 0.72em;
+}
+
+.reveal .compact-note p {
+  margin: 0;
+  font-size: 1em;
+}
+
+
+
+
+
+
+
+
+
+/* El contenedor que genera Quarto para el video */
+.reveal .video-column .quarto-video {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+}
+
+/* El video propiamente tal */
+.reveal .video-column video {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  margin: 0 auto;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 7px 22px #f8fafc;
+}
+
+
+
+
+
+
+/* =========================================
+   DIAPOSITIVA 4: centrar mejor el contenido
+   ========================================= */
+
+.reveal .model-slide .model-column,
+.reveal .model-slide .video-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Caja interna del lado izquierdo */
+.reveal .model-slide .model-box {
+  width: 92%;
+  margin: 0 auto;
+}
+
+/* Caja interna del lado derecho */
+.reveal .model-slide .video-box {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Ecuación de la diapositiva 4 */
+.reveal .model-slide .model-box mjx-container[display="true"] {
+  font-size: 78% !important;
+  margin: 0 auto 0.45em auto !important;
+}
+
+/* Tabla del lado izquierdo */
+.reveal .model-slide .model-box table {
+  width: 100%;
+  margin: 0.2em auto 0.5em auto;
+  font-size: 0.72em;
+}
+
+/* Nota amarilla */
+.reveal .model-slide .compact-note {
+  width: 100%;
+  margin-top: 0.35em;
+  box-sizing: border-box;
+}
+
+/* Video más grande en la diapositiva 4 */
+.reveal .model-slide .video-box .quarto-video {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+}
+
+.reveal .model-slide .video-box video {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  max-height: 460px !important;
+  margin: 0 auto !important;
+  object-fit: contain;
+}
+
+/* Caption del video */
+.reveal .model-slide .side-video-caption {
+  width: 95%;
+  margin: 0.22em auto 0 auto;
+  text-align: center;
+  font-size: 0.48em;
+  line-height: 1.2;
+}
+
+
+
+/* =========================================================
+   LOGO FIJO EN TODAS LAS DIAPOSITIVAS
+   ========================================================= */
+
+.reveal::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  width: 90px;
+  height: 90px;
+
+  background-image: url("imagenes/Usach P1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  z-index: 100;
+  pointer-events: none;
+}
+
+
+
+/* =========================================================
+   ORDEN DEL CONTENIDO EN LA PORTADA
+   ========================================================= */
+
+.reveal #title-slide {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* 1. Título */
+.reveal #title-slide .title {
+  order: 1;
+}
+
+/* 2. Subtítulo */
+.reveal #title-slide .subtitle {
+  order: 2;
+  margin-top: 0.35em;
+  margin-bottom: 0.25em;
+}
+
+/* 3. Periodo académico */
+.reveal #title-slide .date {
+  order: 3;
+  margin: 0 0 0.30em 0;
+  font-size: 0.72em;
+  color: #1f2937;
+}
+
+/* 4. Nombre */
+.reveal #title-slide .author,
+.reveal #title-slide .quarto-title-authors {
+  order: 4;
+  margin-top: 0;
+}
+
+
