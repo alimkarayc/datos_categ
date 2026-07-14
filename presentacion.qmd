@@ -161,8 +161,8 @@ Categorizar → comparar → modelar → decidir
 
 Los datos categóricos permiten pasar de una respuesta simple, como “asistió/no asistió”, a una estimación útil para la toma de decisiones.
 
-###### **Código y archivos reproducibles:** [Descargar proyecto completo](https://github.com/alimkarayc/datos_categy "Material reproducible")
-
 ::: note
 La regresión logística no solo describe: traduce factores en probabilidades interpretables.
 :::
+
+###### **Código y archivos reproducibles:** [Descargar proyecto completo](https://github.com/alimkarayc/datos_categ "Material reproducible")
