@@ -4,6 +4,7 @@ subtitle: "Electivo: Datos Categóricos"
 date: "2026-01-01"
 date-format: "MM-YYYY"
 author: "Camila Herrera C."
+output-file: index.html
 format:
   revealjs:
     theme: simple
